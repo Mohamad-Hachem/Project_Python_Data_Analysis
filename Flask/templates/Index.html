@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        API Project
+    </title>
+</head>
+<body>
+    <h1>Put your given to see if the patient will be readmited</h1>
+    <p id = "prediction">
+    this is where the prediction will appear
+        <ul>
+        <li>
+            if it's [0] : it means that the patient will not come again to the hospital
+        </li>
+        <li>
+            if it's [1] : it means that the patient will come again to the hospital before 30 days
+        </li>
+        <li>
+            if it's [2] : it means that the patient will not come again to the hospital after 30 days
+        </li>
+    </ul>
+
+    </p>
+    <p>
+       prediction is :  {{prediction}}
+        <script>
+            if(prediction == [0])
+            {
+                document.getElementById("prediction").innerHTML = "this is where patient does not need to come again"
+            }
+        </script>
+
+    </p>
+    <form method="POST">
+        <div>
+            <p>
+                Select the race
+            </p>
+            <input type="radio" id = "caucasian" name="race" value = "0" checked>
+            <label for="caucasian">Caucasian</label>
+            <input type="radio" id = "AfricanAmerican" name="race" value = "1" >
+            <label for="AfricanAmerican">AfricanAmerican</label>
+            <input type="radio" id = "Hispanic" name="race" value = "2" >
+            <label for="Hispanic">Hispanic</label>
+            <input type="radio" id = "Asian" name="race" value = "3" >
+            <label for="Asian">Asian</label>
+            <input type="radio" id = "Other" name="race" value = "4" >
+            <label for="Other">Other</label>
+        </div>
+        <div>
+            <p>
+                Select the gender
+            </p>
+            <input type="radio" id = "male" name="gender" value = "1" checked>
+            <label for="male">male</label>
+            <input type="radio" id = "female" name="gender" value = "0" >
+            <label for="female">female</label>
+        </div>
+        <div>
+            <p>
+                Select the age
+            </p>
+            <input type="radio" id = "0-10" name="age" value = "5" checked>
+            <label for="0-10">0-10</label>
+            <input type="radio" id = "10-20" name="age" value = "15" >
+            <label for="10-20">10-20</label>
+            <input type="radio" id = "20-30" name="age" value = "15" >
+            <label for="20-30">20-30</label>
+            <input type="radio" id = "30-40" name="age" value = "35" >
+            <label for="30-40">30-40</label>
+            <input type="radio" id = "40-50" name="age" value = "45" >
+            <label for="40-50">40-50</label>
+            <input type="radio" id = "50-60" name="age" value = "55" >
+            <label for="50-60">50-60</label>
+            <input type="radio" id = "60-70" name="age" value = "65" >
+            <label for="60-70">60-70</label>
+            <input type="radio" id = "70-80" name="age" value = "75" >
+            <label for="70-80">70-80</label>
+        </div>
+         <div>
+            <p>
+                Select the admission_type_id
+            </p>
+             <input type="text" name="admission_type_id" placeholder="insert the number between 1-8" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the discharge_disposition_id
+            </p>
+             <input type="text" name="discharge_disposition_id" placeholder="insert the number between 1-27" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the time_in_hospital
+            </p>
+             <input type="text" name="time_in_hospital" placeholder="insert the number between 1-14" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the num_lab_procedures
+            </p>
+             <input type="text" name="num_lab_procedures" placeholder="insert the number between 1-130" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the num_procedures
+            </p>
+             <input type="text" name="num_procedures" placeholder="insert the number between 0-5" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the num_medications
+            </p>
+             <input type="text" name="num_medications" placeholder="insert the number between 1-81" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the number_outpatient
+            </p>
+             <input type="text" name="number_outpatient" placeholder="insert the number between 0-42" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the number_emergency
+            </p>
+             <input type="text" name="number_emergency" placeholder="insert the number between 0-42" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the number_inpatient
+            </p>
+             <input type="text" name="number_inpatient" placeholder="insert the number between 0-12" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the diag_1
+            </p>
+             <input type="text" name="diag_1" placeholder="insert the number between 0-14" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the diag_2
+            </p>
+             <input type="text" name="diag_2" placeholder="insert the number between 0-14" style="width:400px">
+        </div>
+
+        <div>
+            <p>
+                Select the diag_3
+            </p>
+             <input type="text" name="diag_3" placeholder="insert the number between 0-14" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the number_diagnoses
+            </p>
+             <input type="text" name="number_diagnoses" placeholder="insert the number between 1-16" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the max_glu_serum
+            </p>
+             <input type="text" name="max_glu_serum" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the A1Cresult
+            </p>
+             <input type="text" name="A1Cresult" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the metformin
+            </p>
+            <input type="text" name="metformin" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the glimepiride
+            </p>
+            <input type="text" name="glimepiride" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the glipizide
+            </p>
+            <input type="text" name="glipizide" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the glyburide
+            </p>
+            <input type="text" name="glyburide" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the pioglitazone
+            </p>
+            <input type="text" name="pioglitazone" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+        <div>
+            <p>
+                Select the rosiglitazone
+            </p>
+            <input type="text" name="rosiglitazone" placeholder="insert the number between 0-3" style="width:400px">
+        </div>
+         <div>
+            <p>
+                Select the change
+            </p>
+            <input type="radio" id = "yes-change" name="change" value = '1' checked>
+            <label for="yes">yes</label>
+            <input type="radio" id = "no-change" name="change" value = "0" >
+            <label for="no">No</label>
+        </div>
+         <div>
+            <p>
+                Select the diabetesMed
+            </p>
+            <input type="radio" id = "yes" name="diabetesMed" value = '1' checked>
+            <label for="yes">yes</label>
+            <input type="radio" id = "no" name="diabetesMed" value = "0" >
+            <label for="no">No</label>
+        </div>
+        <div style="margin-top:10px">
+            <input type="submit"  value="submit to see the prediction">
+        </div>
+    </form>
+
+</body>
+</html>
